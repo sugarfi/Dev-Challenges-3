@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Quicksand:wght@300&display=swap');
+
+html, body {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    position: relative;
+    overflow-x: hidden;
+    font-size: 14pt;
+}
+
+a {
+    color: white;
+}
+
+main {
+    padding: 0 5vw;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    padding-top: 10px;
+    box-sizing: border-box;
+}
+
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+header > span {
+    text-transform: uppercase;
+    border: 1px solid white;
+    padding: 5px;
+    font-size: 0.8rem;
+    font-family: 'Merriweather', serif;
+}
+
+header > nav {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+}
+
+header > nav > a {
+    text-decoration: none;
+    position: relative;
+    margin-right: 10px;
+}
+
+header > nav > a::after {
+    width: 0;
+    border-bottom: 1px solid white;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    transition: all 0.2s;
+    content: "";
+}
+
+header > nav > a:hover::after {
+    width: 100%;
+}
+
+article {
+    font-size: 1.2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 50px;
+    height: 60%;
+}
+
+article > section {
+    height: 50%;
+    width: fit-content;
+    position: relative;
+}
+
+article > section > div {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    background-color: black;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+article > section > div > h2 {
+    font-size: 110%;
+}
+
+article > section > div > div {
+    display: flex;
+}
+
+article > section > div > div > div {
+    display: flex;
+    flex-direction: column;
+}
+
+article > section > div > div > img {
+    width: 50px;
+    height: 50px;
+    clip-path: circle(50%);
+    margin: 5px;
+}
+
+h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 3rem;
+    margin-top: 0;
+}
+
+h2 {
+    font-family: 'Merriweather', serif;
+}
+
+article > section > p {
+    width: 40%;
+}
+
+article > section > a {
+    text-decoration: none;
+}
+
+article > section > a:hover {
+    text-decoration: underline;
+}
+
+article > section > img {
+    max-height: 100%;
+}
+
+header > a#btn, nav > span {
+    display: none;
+}
+
+@media (max-width: 700px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    nav > span {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 2rem;
+        padding: 0 10px;
+    }
+
+    html, body {
+        overflow-x: auto;
+    }
+
+    article {
+        margin-top: 50px;
+    }
+
+    header > a#btn {
+        border-top: 2px solid white;
+        border-bottom: 2px solid white;
+        width: 25px;
+        height: 20px;
+        display: block;
+        position: relative;
+    }
+
+    header > a#btn::after {
+        content: "";
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-bottom: 2px solid white;
+    }
+
+    header > a#btn.clicked + nav {
+        clip-path: inset(0 0 0 0);
+    }
+
+    header > nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #111111;
+        z-index: 5;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        clip-path: inset(50% 50% 50% 50%);
+        transition: all 0.4s;
+    }
+
+    article > section {
+        height: fit-content;
+        margin-bottom: 50px;
+    }
+
+    article > section:last-of-type {
+        margin-bottom: 50%;
+    }
+
+    article > section > p {
+        width: 100%;
+    }
+
+    article > section > a {
+        margin: 20px 0;
+    }
+
+    article > section > img {
+        max-width: 100%;
+    }
+
+    article > section > div {
+        bottom: -50%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+    }
+
+    article {
+        font-size: 1.2rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        height: auto;
+    }
+
+    footer {
+        position: relative;
+        z-index: 5;
+    }
+}
